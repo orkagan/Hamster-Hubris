@@ -1,2 +1,0 @@
-# Hamster Hubris
- 
