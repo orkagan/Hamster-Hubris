@@ -28,7 +28,7 @@ Material:
     m_Floats:
     - _Glossiness: 0.5
     - _Metallic: 0
-    - _WibbleFactor: 0.007
+    - _WibbleFactor: 0.004
     - _WibbleRate: 20
     - _ZOffsetFactor: 50
     m_Colors:
