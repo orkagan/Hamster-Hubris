@@ -46,7 +46,6 @@ public class CharacterMovement : MonoBehaviour
     {
         // ground check
         grounded = Physics.Raycast(transform.position+Vector3.up*playerHeight, Vector3.down, playerHeight * 0.5f + 0.1f, whatIsGround);
-        Debug.Log(grounded);
 
         MyInput();
         SpeedControl();
@@ -109,7 +108,6 @@ public class CharacterMovement : MonoBehaviour
     {
         // reset y velocity
         rb.velocity = new Vector3(rb.velocity.x, 0f, rb.velocity.z);
-        Debug.Log("Jump!");
         rb.AddForce(transform.up * jumpForce, ForceMode.Impulse);
     }
     private void ResetJump()
