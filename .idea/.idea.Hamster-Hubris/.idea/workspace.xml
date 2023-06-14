@@ -3,9 +3,17 @@
   <component name="ChangeListManager">
     <list default="true" id="0bddbcaa-a7b4-4bf1-aacb-331018e16be7" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Hamster-Hubris/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Hamster-Hubris/.idea/workspace.xml" afterDir="false" />
+<<<<<<< HEAD
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Shaders/Custom_Toon.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Shaders/Custom_Toon.mat" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Shaders/Custom_Wobble.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Shaders/Custom_Wobble.mat" afterDir="false" />
+=======
+      <change beforePath="$PROJECT_DIR$/Assets/Models/hamper.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Models/hamper.fbx.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Shaders/Custom_Wobble.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Shaders/Custom_Wobble.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Packages/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
+>>>>>>> 63a6e28acfe834185a15a2d5e32b8ebd5fd97da3
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,9 +41,15 @@
   },
   &quot;keyToStringList&quot;: {
     &quot;rider.external.source.directories&quot;: [
+<<<<<<< HEAD
       &quot;/Users/joelflight/Library/Application Support/JetBrains/Rider2022.3/resharper-host/DecompilerCache&quot;,
       &quot;/Users/joelflight/Library/Application Support/JetBrains/Rider2022.3/resharper-host/SourcesCache&quot;,
       &quot;/Users/joelflight/.local/share/Symbols/src&quot;
+=======
+      &quot;C:\\Users\\Jonathan\\AppData\\Roaming\\JetBrains\\Rider2022.3\\resharper-host\\DecompilerCache&quot;,
+      &quot;C:\\Users\\Jonathan\\AppData\\Roaming\\JetBrains\\Rider2022.3\\resharper-host\\SourcesCache&quot;,
+      &quot;C:\\Users\\Jonathan\\AppData\\Local\\Symbols\\src&quot;
+>>>>>>> 63a6e28acfe834185a15a2d5e32b8ebd5fd97da3
     ]
   }
 }</component>
@@ -86,8 +100,13 @@
       <option name="presentableId" value="Default" />
       <updated>1684291662755</updated>
       <workItem from="1684291664757" duration="7367000" />
+<<<<<<< HEAD
       <workItem from="1684898123013" duration="837000" />
       <workItem from="1684898991680" duration="6558000" />
+=======
+      <workItem from="1684910929024" duration="4116000" />
+      <workItem from="1685437716906" duration="1000" />
+>>>>>>> 63a6e28acfe834185a15a2d5e32b8ebd5fd97da3
     </task>
     <servers />
   </component>
