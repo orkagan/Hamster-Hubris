@@ -7,34 +7,32 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Custom_Toon
-  m_Shader: {fileID: 4800000, guid: 481573ddbd0b8d642a653bdc42ba0111, type: 3}
+  m_Name: Auroa
+  m_Shader: {fileID: 4800000, guid: d67d001c211e648be8c7823b2ea0fb11, type: 3}
   m_ValidKeywords: []
   m_InvalidKeywords: []
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
+  m_DoubleSidedGI: 1
+  m_CustomRenderQueue: 3000
   stringTagMap: {}
   disabledShaderPasses: []
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: c16657408f21c465a88d9d94c26040dc, type: 3}
+        m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _SpecularFalloff: 1.075
-    - _SpecularSize: 0.1
-    - _StepAmount: 7
-    - _StepWidth: 0.1
-    - _WibbleFactor: 0.004
-    - _WibbleRate: 20
+    - _AnimSpeed: 20
+    - _ColorEnd: 1
+    - _ColorStart: 0
+    - _FreeRange: 0.02
+    - _FreeRangeB: 1
     m_Colors:
-    - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _Emission: {r: 0, g: 0, b: 0, a: 1}
-    - _ShadowTint: {r: 0.5, g: 0.5, b: 0.5, a: 1}
-    - _Specular: {r: 1, g: 1, b: 1, a: 1}
+    - _ColorA: {r: 1, g: 0, b: 0, a: 0.4627451}
+    - _ColorB: {r: 1, g: 0.09411764, b: 0, a: 0.33333334}
+    - _ColorC: {r: 1, g: 0.21503884, b: 0.023584902, a: 0.25490198}
   m_BuildTextureStacks: []
