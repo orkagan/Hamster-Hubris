@@ -108,7 +108,7 @@ Material:
     - _Surface: 0
     - _UVSec: 0
     - _WibbleFactor: 0.004
-    - _WibbleRate: 21.39
+    - _WibbleRate: 25
     - _WorkflowMode: 0
     - _ZOffsetFactor: 50
     - _ZWrite: 1

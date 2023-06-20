@@ -6,6 +6,7 @@ public class CharacterMovement : MonoBehaviour
 {
     [Header("Movement")]
     public float moveSpeed;
+    public float climbSpeed;
 
     public float groundDrag;
 
@@ -45,7 +46,7 @@ public class CharacterMovement : MonoBehaviour
     private void Update()
     {
         // ground check
-        grounded = Physics.Raycast(transform.position+Vector3.up*playerHeight, Vector3.down, playerHeight * 0.5f + 0.1f, whatIsGround);
+        grounded = Physics.Raycast(transform.position + Vector3.up * 0.001f, Vector3.down, 0.001f, whatIsGround);
 
         MyInput();
         SpeedControl();
@@ -114,4 +115,10 @@ public class CharacterMovement : MonoBehaviour
     {
         readyToJump = true;
     }
+
+    /*private void OnCollisionStay(Collision collision)
+    {
+        rb.AddForce(Vector3.up * climbSpeed * 30f * Time.deltaTime, ForceMode.Acceleration);
+        Debug.Log("Collisions!");
+    }*/
 }
