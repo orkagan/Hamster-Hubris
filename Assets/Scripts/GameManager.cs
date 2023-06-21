@@ -3,18 +3,24 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
-using UnityEngine.Rendering.PostProcessing;
 
 [System.Serializable]
 public class MyGOEvent : UnityEvent<GameObject>
 {
 }
+public class MyBoolEvent : UnityEvent<bool>
+{
+}
 
 public class GameManager : MonoBehaviour
 {
+
+    #region References
+
     public int pickUpCount;
     public MyGOEvent pickUpEvent;
-    public UnityEvent placeDownEvent; 
+    public UnityEvent placeDownEvent;
+    public MyBoolEvent death;
     
     public Camera mainCamera;
     public Shader placedShader, ghostShader;
@@ -31,6 +37,9 @@ public class GameManager : MonoBehaviour
     public List<GameObject> currentItemsPickedUp;
     public List<GameObject> pickUpSlots;
     public List<GameObject> itemsOnBack;
+    
+    #endregion
+    
 
     private void Start()
     {
@@ -43,6 +52,9 @@ public class GameManager : MonoBehaviour
 
         placeDownEvent = new UnityEvent();
         placeDownEvent.AddListener(Placed);
+
+        death = new MyBoolEvent();
+        death.AddListener(OnDeath);
     }
 
     private void OnPickingUp(GameObject arg0)
@@ -107,14 +119,6 @@ public class GameManager : MonoBehaviour
         {
             OnDeath(true);
             Debug.Log("End Game??");
-        }
-    }
-
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.A))
-        {
-            OnDeath(false);
         }
     }
 

@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3836316364034460653}
   - component: {fileID: 7015268755419167549}
   m_Layer: 0
-  m_Name: BloodEffect
+  m_Name: Cabnet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -62,7 +62,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 7a8b455e85e3f4b8791321739bcedb2b, type: 2}
+  - {fileID: 10302, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

@@ -16,11 +16,15 @@ public class ShrineHandler : MonoBehaviour
     public void OnCollisionEnter(Collision collision)
     {
         if (collision == null) return;
-        gm.placeDownEvent.Invoke();
+        
         
         if (gm.hampterGO.GetComponent<MeshRenderer>().materials[0].shader == gm.ghostShader && gm.hampterGO.activeSelf)
         {
             gm.hampterGO.GetComponent<MeshRenderer>().materials[0].shader = gm.placedShader;
+            gm.EndGame(true);
+            return;
         }
+        
+        gm.placeDownEvent.Invoke();
     }
 }
