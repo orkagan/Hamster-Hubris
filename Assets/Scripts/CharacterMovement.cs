@@ -63,6 +63,9 @@ public class CharacterMovement : MonoBehaviour
     private void FixedUpdate()
     {
         MovePlayer();
+
+        //Climbing
+        //TODO: some kind of limit, time limit or maybe stamina
         if (climbing & Input.GetKey(jumpKey))
         {
             Climb();
@@ -131,6 +134,7 @@ public class CharacterMovement : MonoBehaviour
 
     private void OnCollisionStay(Collision collision)
     {
+        //TODO: limit climb angle
         if (!grounded & Input.GetKey(jumpKey))
         {
             Vector3 averageCollisionNormals = Vector3.zero;

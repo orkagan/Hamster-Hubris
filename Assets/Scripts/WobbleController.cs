@@ -25,7 +25,7 @@ public class WobbleController : MonoBehaviour
     {
         Vector3 flatVel = new Vector3(_rb.velocity.x, 0f, _rb.velocity.z);
         
-        //funny rotation in direction of movement
+        //rotation in direction of movement
         if (_rb.velocity.magnitude > 0.01f & !(_charMov.grounded||_charMov.climbing))
         {
             transform.forward = Vector3.SmoothDamp(transform.forward, _rb.velocity.normalized, ref _smoothRotateVelocity, 0.05f);
