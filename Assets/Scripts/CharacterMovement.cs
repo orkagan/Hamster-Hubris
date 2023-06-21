@@ -24,7 +24,9 @@ public class CharacterMovement : MonoBehaviour
     [Header("Ground Check")]
     public float playerHeight;
     public LayerMask whatIsGround;
-    bool grounded;
+    public bool grounded { get; private set; }
+    public bool climbing;
+    public Vector3 climbNormal;
 
     public Transform orientation;
 
@@ -61,6 +63,10 @@ public class CharacterMovement : MonoBehaviour
     private void FixedUpdate()
     {
         MovePlayer();
+        if (climbing & Input.GetKey(jumpKey))
+        {
+            Climb();
+        }
     }
 
     private void MyInput()
@@ -103,6 +109,13 @@ public class CharacterMovement : MonoBehaviour
             Vector3 limitedVel = flatVel.normalized * moveSpeed;
             rb.velocity = new Vector3(limitedVel.x, rb.velocity.y, limitedVel.z);
         }
+
+        //limit climb velocity
+        if (climbing & rb.velocity.y > climbSpeed)
+        {
+            float limitedVertVel = rb.velocity.y * moveSpeed;
+            rb.velocity = new Vector3(rb.velocity.x, limitedVertVel, rb.velocity.z);
+        }
     }
 
     private void Jump()
@@ -116,9 +129,26 @@ public class CharacterMovement : MonoBehaviour
         readyToJump = true;
     }
 
-    /*private void OnCollisionStay(Collision collision)
+    private void OnCollisionStay(Collision collision)
     {
-        rb.AddForce(Vector3.up * climbSpeed * 30f * Time.deltaTime, ForceMode.Acceleration);
-        Debug.Log("Collisions!");
-    }*/
+        if (!grounded & Input.GetKey(jumpKey))
+        {
+            Vector3 averageCollisionNormals = Vector3.zero;
+            foreach(ContactPoint point in collision.contacts)
+            {
+                averageCollisionNormals += point.normal;
+            }
+            climbNormal = averageCollisionNormals/collision.contacts.Length;
+            climbing = true;
+        }
+    }
+    private void OnCollisionExit(Collision collision)
+    {
+        climbing = false;
+    }
+
+    private void Climb()
+    {
+        rb.AddForce(Vector3.up * climbSpeed * 30f * Time.deltaTime, ForceMode.Force);
+    }
 }
