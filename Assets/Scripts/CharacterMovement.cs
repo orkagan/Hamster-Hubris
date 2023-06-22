@@ -7,6 +7,8 @@ public class CharacterMovement : MonoBehaviour
     [Header("Movement")]
     public float moveSpeed;
     public float climbSpeed;
+    
+    public float velocity;
 
     public float groundDrag;
 
