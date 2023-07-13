@@ -57,7 +57,10 @@ public class CharacterMovement : MonoBehaviour
 
         // handle drag
         if (grounded)
+        {
             rb.drag = groundDrag;
+            climbing = false;
+        }
         else
             rb.drag = 0;
     }

@@ -43,10 +43,11 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
-        hampterGO.SetActive(false);
+        player = GameObject.FindGameObjectWithTag("Player");
         
         pickUpCount = 0;
-        mainCamera = GameObject.FindWithTag("MainCamera").GetComponent<Camera>();
+        //mainCamera = GameObject.FindWithTag("MainCamera").GetComponent<Camera>();
+        mainCamera = Camera.main;
         pickUpEvent = new MyGOEvent();
         pickUpEvent.AddListener(OnPickingUp);
 
