@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.Events;
 
 [System.Serializable]
@@ -29,6 +30,7 @@ public class GameManager : MonoBehaviour
     public GameObject explodeParticleEffect;
     public GameObject player;
     public GameObject bloodEffect;
+    public GameObject EndEffect;
 
     public Transform startPosition;
 
@@ -37,6 +39,7 @@ public class GameManager : MonoBehaviour
     public List<GameObject> currentItemsPickedUp;
     public List<GameObject> pickUpSlots;
     public List<GameObject> itemsOnBack;
+    public List<GameObject> placedItems;
     
     #endregion
     
@@ -83,6 +86,7 @@ public class GameManager : MonoBehaviour
         if (currentItemsPickedUp.Count == 0) return;
         foreach (var item in currentItemsPickedUp)
         {
+            placedItems.Add(item);
             item.GetComponent<PickUp>().shrineEquivalent.GetComponent<MeshRenderer>().materials[0].shader = placedShader;
             item.GetComponent<PickUp>().shrinePreview.GetComponent<MeshRenderer>().materials[0].shader = placedShader;
             
@@ -105,6 +109,14 @@ public class GameManager : MonoBehaviour
         {
             EndGame(false);
         }
+
+        if (placedItems.Count >= 4)
+        {
+            Debug.Log("SHRINE ACTIVATED");
+            //Enough items met
+            //Particle effect
+            EndEffect.SetActive(true);
+        }
     }
 
     public void EndGame(bool sacrafice)
@@ -113,13 +125,12 @@ public class GameManager : MonoBehaviour
         {
             hampterGO.GetComponent<MeshRenderer>().materials[0].shader = ghostShader;
             hampterGO.SetActive(true);
-            hampterGO.GetComponentInChildren<ParticleSystem>().gameObject.SetActive(true);
             pickUpCount++;
         }
         else
         {
-            OnDeath(true);
             Debug.Log("End Game??");
+            OnDeath(true);
         }
     }
 
@@ -134,7 +145,6 @@ public class GameManager : MonoBehaviour
         {
             var blood = Instantiate(bloodEffect);
             blood.transform.position = player.transform.position;
-            //blood.transform.rotation = player.transform.rotation;
 
             bloodEffectsPlaced.Add(blood);
         }
@@ -147,6 +157,7 @@ public class GameManager : MonoBehaviour
         if (finalDeath)
         {
             //ENDGAME
+            Debug.Log("Endgame");
         }
         else
         {
@@ -164,5 +175,17 @@ public class GameManager : MonoBehaviour
         Destroy(particleEffect);
         player.SetActive(true);
         player.transform.position = startPosition.position;
+    }
+
+    private void Update()
+    {
+        //Restart the scene (for if player gets stuck)
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            // Get the current scene
+            Scene currentScene = SceneManager.GetActiveScene();
+            // Load the next scene after current scene
+            SceneManager.LoadScene(currentScene.buildIndex);
+        }
     }
 }
