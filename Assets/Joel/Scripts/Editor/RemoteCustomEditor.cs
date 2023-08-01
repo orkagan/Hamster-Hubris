@@ -1,4 +1,4 @@
-/*using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
@@ -10,7 +10,7 @@ public class RemoteCustomEditor : Editor
     {
         DrawDefaultInspector();
 
-        Remote remote = (Remote) target;
+        Remote remote = (Remote)target;
         if (GUILayout.Button("Toggle TV"))
         {
             remote.TV(remote.tvON.activeSelf);
@@ -18,4 +18,3 @@ public class RemoteCustomEditor : Editor
     }
 #endif
 }
-*/
